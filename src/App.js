@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./components/NavBar";
+import { Routes, Route } from "react-router-dom";
+import SubmitPupPic from "./components/SubmitPupPic";
+import Home from "./components/Home";
+import GalleryAllPups from "./components/GalleryAllPups";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <main>
+        <h1>What's Pup Thinkin'?</h1>
+      </main>
+      <Routes>
+        <Route exact path="/submit" element={<SubmitPupPic />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/gallery" element={<GalleryAllPups />} />
+      </Routes>
     </div>
   );
 }
