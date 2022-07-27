@@ -1,6 +1,9 @@
 :root {
   --heading-font: "Nanum Pen Script", cursive;
   --content-font: "Crimson Text", serif;
+  --main-blue: #035397;
+  --main-orange: #f77e21;
+  --main-green: #00c897;
 }
 
 body {
@@ -13,8 +16,17 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
   font-family: var(--heading-font);
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+p {
+  font-size: 1.25rem;
 }
 
 code {

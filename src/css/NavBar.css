@@ -1,0 +1,20 @@
+.NavBarCustom {
+  background: var(--main-blue) !important;
+}
+
+.NavBarCustom a {
+  color: white !important;
+  font-size: 1.5em;
+  transition: 220ms ease-in;
+}
+
+.NavBarCustom a:hover {
+  color: var(--main-green) !important;
+  font-size: 1.5em;
+  text-decoration: overline;
+}
+
+.NavBarCustom .navbar-logo {
+  color: var(--main-orange);
+  height: 2em;
+}

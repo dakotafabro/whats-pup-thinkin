@@ -9,9 +9,6 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <main>
-        <h1>What's Pup Thinkin'?</h1>
-      </main>
       <Routes>
         <Route exact path="/submit" element={<SubmitPupPic />} />
         <Route exact path="/" element={<Home />} />
