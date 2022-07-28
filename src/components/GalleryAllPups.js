@@ -1,6 +1,10 @@
 import React from "react";
 import SinglePup from "./SinglePup";
 import "../css/GalleryAllPups.css";
+import { getPups } from "../store/pupReducer";
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 const pups = [
   {
@@ -47,10 +51,11 @@ const pups = [
   },
 ];
 
-const GalleryAllPups = () => {
+const GalleryAllPups = (props) => {
   return (
     <div className="GalleryAllPups">
       <h1 className="text-decoration-underline">Gallery of Pups</h1>
+      <button onClick={props.getAllPups}>click</button>
       <div className="container">
         <div className="row">
           {pups.map((pup) => {
@@ -62,4 +67,18 @@ const GalleryAllPups = () => {
   );
 };
 
-export default GalleryAllPups;
+const mapStateToProps = (state) => {
+  return {
+    allPups: state.allPups,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getAllPups: () => {
+      dispatch(getPups());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GalleryAllPups);

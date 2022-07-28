@@ -1,3 +1,6 @@
+import { collection, getDocs } from "firebase/firestore";
+import db from "../firebase/index";
+
 const ADD_PUP = "ADD_PUP";
 const GET_PUPS = "GET_PUPS";
 const UPDATE_PUP = "UPDATE_PUP";
@@ -10,10 +13,10 @@ const _addPup = (pup) => {
   };
 };
 
-const _getPups = (id) => {
+const _getPups = (pups) => {
   return {
     type: GET_PUPS,
-    id,
+    pups,
   };
 };
 
@@ -36,7 +39,18 @@ export const addPup = (pup) => {
 };
 
 export const getPups = () => {
-  return async (dispatch) => {};
+  return async (dispatch) => {
+    try {
+      const querySnapshot = await getDocs(collection(db, "pups"));
+      const allPups = [];
+      querySnapshot.forEach((doc) => {
+        allPups.push({ id: doc.id, data: doc.data() });
+      });
+      dispatch(_getPups(allPups));
+    } catch (err) {
+      console.error(err);
+    }
+  };
 };
 
 export const updatePup = (id, pup) => {
@@ -52,7 +66,8 @@ const PupReducer = (state = [], action) => {
     case ADD_PUP:
       return;
     case GET_PUPS:
-      return;
+      console.log(action.pups);
+      return action.pups;
     case UPDATE_PUP:
       return;
     case DELETE_PUP:
