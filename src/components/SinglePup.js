@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import "../css/SinglePup.css";
 
 const SinglePup = (props) => {
+  console.log(props.pupId);
   return (
     <div className="SinglePup col-sm-4 p-3 border-bottom">
-      <Link to={`/pup/${props.pup.id}`}>
+      <Link to={`/pup/${props.pupId}`}>
         <h2>
           {props.pup.name}, {props.pup.age}
         </h2>

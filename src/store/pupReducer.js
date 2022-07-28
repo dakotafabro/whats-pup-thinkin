@@ -61,12 +61,11 @@ export const deletePup = (id, pup) => {
   return async (dispatch) => {};
 };
 
-const PupReducer = (state = [], action) => {
+const pupReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_PUP:
       return;
     case GET_PUPS:
-      console.log(action.pups);
       return action.pups;
     case UPDATE_PUP:
       return;
@@ -77,4 +76,4 @@ const PupReducer = (state = [], action) => {
   }
 };
 
-export default PupReducer;
+export default pupReducer;

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/SinglePupView.css";
 import SingleSubmission from "./SingleSubmission";
-// import { useParams } from "react-router-dom";
+import { connect } from "react-redux";
+import { getSinglePup } from "../store/singlePupReducer";
+import { useParams } from "react-router-dom";
 
 const submissions = [
   {
@@ -55,13 +57,21 @@ const submissions = [
 ];
 
 const SinglePupView = (props) => {
-  //   let { id } = useParams();
+  let { id } = useParams();
+
+  useEffect(() => {
+    props.getSinglePup(id);
+  }, []);
+
   return (
     <div className="SinglePupView container">
       <div className="row align-items-center">
         <div className="img-and-name col-sm-6">
           <img src="https://i.imgur.com/JUg41lt.gif " alt="pup" />
-          <p>Auggie, 2 - Husky/Boxer</p>
+          <p>
+            {props.singlePup.name}, {props.singlePup.age} -{" "}
+            {props.singlePup.breed}
+          </p>
         </div>
         <div className="col-sm-6">
           <h2>What's Pup Thinkin'?</h2>
@@ -94,4 +104,18 @@ const SinglePupView = (props) => {
   );
 };
 
-export default SinglePupView;
+const mapStateToProps = (state) => {
+  return {
+    singlePup: state.singlePup,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getSinglePup: (id) => {
+      dispatch(getSinglePup(id));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SinglePupView);
