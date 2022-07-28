@@ -8,7 +8,8 @@
 
 body {
   margin: 0;
-  font-family: var(--content-font);
+  font-family: var(--heading-font);
+  background-image: url("https://i.imgur.com/3C1DYz4.jpg");
 }
 
 h1,
@@ -17,16 +18,33 @@ h3,
 h4,
 h5,
 h6,
-a {
+a,
+button {
   font-family: var(--heading-font);
+  text-align: center;
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 3rem;
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+img {
+  border: 3px dashed var(--main-blue);
+  border-radius: 10px;
 }
 
 code {

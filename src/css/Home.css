@@ -1,5 +1,6 @@
 .Home {
-  margin-top: 2rem;
+  margin-top: 10rem;
+  text-align: center;
 }
 
 .Home button {
@@ -20,4 +21,8 @@
 
 .Home img {
   height: 20rem;
+}
+
+.Home .thinking-pup {
+  height: 35rem;
 }

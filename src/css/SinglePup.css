@@ -1,0 +1,8 @@
+.SinglePup a {
+  text-decoration: none;
+  color: #000;
+  transition: 220ms ease-in-out;
+}
+.SinglePup a:hover {
+  color: var(--main-green);
+}

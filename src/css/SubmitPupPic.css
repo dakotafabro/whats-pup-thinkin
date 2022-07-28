@@ -1,0 +1,63 @@
+.SubmitPupPic {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.SubmitPupPic button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--main-green);
+  margin: 2rem;
+  font-size: 2rem;
+  transition: 220ms ease-in;
+  box-shadow: 2px 2px 8px rgb(194, 194, 194);
+}
+
+.SubmitPupPic button:hover {
+  background-color: var(--main-orange);
+  color: white;
+}
+
+.SubmitPupPic form {
+  padding: 50px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.SubmitPupPic form div {
+  margin: 10px;
+}
+
+.SubmitPupPic input[type="text"],
+input[type="date"] {
+  padding: 5px;
+  font-size: 1.75rem;
+  border: none;
+  border-bottom: 1px solid var(--main-blue);
+  color: var(--main-green);
+  background-color: transparent;
+}
+
+.SubmitPupPic label {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+}
+
+.SubmitPupPic input[type="submit"],
+input[type="file"] {
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--main-blue);
+  margin: 1rem;
+  font-size: 1.25rem;
+  transition: 220ms ease-in;
+  box-shadow: 2px 2px 8px rgb(194, 194, 194);
+  color: white;
+}
+
+.SubmitPupPic input[type="submit"]:hover {
+  background-color: var(--main-orange);
+  color: white;
+}

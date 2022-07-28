@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import SubmitPupPic from "./components/SubmitPupPic";
 import Home from "./components/Home";
 import GalleryAllPups from "./components/GalleryAllPups";
+import SinglePupView from "./components/SinglePupView";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
         <Route exact path="/submit" element={<SubmitPupPic />} />
         <Route exact path="/" element={<Home />} />
         <Route exact path="/gallery" element={<GalleryAllPups />} />
+        <Route exact path="/pup/:id" element={<SinglePupView />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
